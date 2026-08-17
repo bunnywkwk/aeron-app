@@ -40,7 +40,7 @@ pipeline {
                         git clone https://${GITHUB_USER}:${GITHUB_TOKEN}@${GITOPS_REPO_URL} aeron-gitops
                         cd aeron-gitops
                         
-                        sed -i "s|image: ${REGISTRY}/${APP_NAME}:.*|image: ${REGISTRY}/${APP_NAME}:${IMAGE_TAG}|g" ${TARGET_FOLDER}/deployment.yaml
+                        sed -i "s|image: ${REGISTRY}/portal-a:.*|image: ${REGISTRY}/portal-a:${IMAGE_TAG}|g" ${TARGET_FOLDER}/deployment.yaml
                         
                         git config user.email "aeron@jenkins-automation"
                         git config user.name "Aeron"
