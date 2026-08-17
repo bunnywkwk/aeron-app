@@ -5,7 +5,6 @@ pipeline {
         APP_NAME = 'portal-a'
         REGISTRY = credentials('docker-registry-url')
         GITOPS_REPO_URL = 'github.com/bunnywkwk/aeron-gitops.git'
-        GIT_SHORT_SHA = "${sh(script: 'git rev-parse --short HEAD || echo dev', returnStdout: true).trim()}"
     }
 
     stages {
@@ -16,7 +15,7 @@ pipeline {
                         env.IMAGE_TAG = "${env.TAG_NAME}"
                         env.TARGET_FOLDER = "environments/production"
                     } else {
-                        env.IMAGE_TAG = "staging-${env.GIT_SHORT_SHA}"
+                        env.IMAGE_TAG = "staging-v${env.BUILD_NUMBER}"
                         env.TARGET_FOLDER = "environments/staging"
                     }
                 }
