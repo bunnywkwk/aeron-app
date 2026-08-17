@@ -4,7 +4,7 @@ pipeline {
     environment {
         APP_NAME = 'portal-a'
         REGISTRY = credentials('docker-registry-url')
-        GITOPS_REPO_URL = 'github.com/skyworknav/aeron-gitops.git'
+        GITOPS_REPO_URL = 'github.com/bunnywkwk/aeron-gitops.git'
         GIT_SHORT_SHA = "${sh(script: 'git rev-parse --short HEAD || echo dev', returnStdout: true).trim()}"
     }
 
