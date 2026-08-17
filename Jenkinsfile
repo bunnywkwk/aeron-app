@@ -42,8 +42,8 @@ pipeline {
                         
                         sed -i "s|image: ${REGISTRY}/${APP_NAME}:.*|image: ${REGISTRY}/${APP_NAME}:${IMAGE_TAG}|g" ${TARGET_FOLDER}/deployment.yaml
                         
-                        git config user.email "jenkins@aeron-automation"
-                        git config user.name "Jenkins Engine"
+                        git config user.email "aeron@jenkins-automation"
+                        git config user.name "Aeron"
                         git add .
                         git commit -m "ci: update ${APP_NAME} to ${IMAGE_TAG}" || echo "No changes"
                         git push origin main
