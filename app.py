@@ -48,7 +48,7 @@ PAGE = """
   Version: <code>{{ version }}</code><br>
   Owner: <code>{{ owner }}</code><br>
   API key loaded: <code>{{ key_status }}</code><br>
-  Served by pod111111: <code>{{ hostname }}</code>
+  Served by pod: <code>{{ hostname }}</code>
 </div>
 """
 
